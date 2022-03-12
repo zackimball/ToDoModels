@@ -2,9 +2,9 @@ name: Package Development branch
 
 on:
   push:
-    branches: [ NugetGHAction, development ]
+    branches: [ main ]
   pull_request:
-    branches: [ NugetGHAction, development ]
+    branches: [ main ]
 
 jobs:
   build:
