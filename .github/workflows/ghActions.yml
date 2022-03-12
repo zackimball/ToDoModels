@@ -17,13 +17,13 @@ jobs:
         dotnet-version: 6.0.x
     - name: Restore dependencies
       working-directory: ./src
-      run: dotnet restore ./TodDoModels.csproj
+      run: dotnet restore ./ToDoModels.csproj
     - name: Build
       working-directory: ./src
-      run: dotnet build ./TodDoModels.csproj --no-restore
+      run: dotnet build ./ToDoModels.csproj --no-restore
     - name: Package
       working-directory: ./src
-      run: dotnet pack ./TodDoModels.csproj --no-build --verbosity normal
+      run: dotnet pack ./ToDoModels.csproj --no-build --verbosity normal
     - name: Push to Git Nuget
       working-directory: ./src/bin/Release
-      run: dotnet nuget push ./TodDoModels*.nupkg --username USERNAME --password${{ secrets.GITHUB_TOKEN }} --source "github"  
+      run: dotnet nuget push ./ToDoModels*.nupkg --username USERNAME --password${{ secrets.GITHUB_TOKEN }} --source "github"  
