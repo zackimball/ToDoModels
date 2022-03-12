@@ -7,10 +7,8 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-
+  pack-models:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
@@ -18,6 +16,7 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Setup NuGet Auth
+      working-directory: ./src
       run: dotnet nuget add source --username USERNAME --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ontomortgage/IceSculptures/index.json"
     - name: Restore dependencies
       working-directory: ./src
