@@ -20,7 +20,7 @@ jobs:
       run: dotnet restore ./ToDoModels.csproj
     - name: Build
       working-directory: ./src
-      run: dotnet build ./ToDoModels.csproj --no-restore
+      run: dotnet build -c Release ./ToDoModels.csproj --no-restore
     - name: Package
       working-directory: ./src
       run: dotnet pack ./ToDoModels.csproj --no-build --verbosity normal
