@@ -1,7 +1,6 @@
 using System;
 
-
-public namespace ToDoItem
+namespace ToDoItem
 {
     public class ToDo
     {
